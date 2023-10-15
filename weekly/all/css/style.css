@@ -1,0 +1,136 @@
+body {
+    font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
+    background-color: white; /* Hintergrundfarbe des Body */
+    font-size:100%;
+    text-align: justify;
+}
+
+/* Überschrift */
+.headerandnav {
+    background-color: rgb(156, 248, 248); /* Dunkler Hintergrund */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr ;
+    
+    justify-items: center;
+    align-items:center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
+    
+    height: 7em;
+    width: 100%;
+    background-image: url('fitness-background.jpg'); /* Hintergrundbild für den Header */
+    background-size: cover; /* Hintergrundbild an den Header anpassen */
+    color: rgba(14, 13, 13, 0.655); /* Weiße Schriftfarbe */
+    border-bottom-left-radius: 30px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.headerandnav:scrolled{
+    background-color: rgb(240, 240, 251);
+}
+
+
+
+.header {
+    text-transform: uppercase;
+    margin-bottom: 10px ; /* Abstand unter der Überschrift */  
+    position:relative;
+    width: 100%;
+    align-items:stretch;
+    display: flex;
+    
+   
+
+    font-size: 200%; /* Größe der Überschrift */
+    font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
+    letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
+    text-decoration: underline ; /* Dekoration der Überschrift */
+    text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
+    padding-top: 0.5em; /* Innenabstand der Überschrift */
+}
+
+#navigation {
+    list-style: none; /* Entfernt Listenpunkte-Stile */
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
+    
+}
+
+.navi a{
+    color: #000;
+    text-decoration: underline solid 0.02em;
+    margin: 0.7em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out; /* Übergangseffekt für Textfarbe */
+}
+
+.navi{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 0.5em 
+}
+
+.navi a:hover {
+    color: rgb(225, 12, 12); /*Farbänderung bei Hover (Mauszeiger darüber) */
+}
+
+/* Hinzufügen eines Overlay-Farbeffekts beim Schweben über den Header */
+.headerandnav:hover {
+    background-color: rgba(214, 250, 83, 0.418); /* Halbtransparente dunkle Farbe */
+}
+
+.maingrid{
+    display: grid;
+}
+.untertitel{
+    font-size: 2em;
+    text-align:center;
+   
+    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
+    position:relative;
+    top: 52%;
+    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
+    /* Weitere Stilregeln für deinen Header und die Navigation... */
+    border: 1px dotted black;
+    width: 100%;
+}
+
+.untertitel.transparent {
+    color: hsl(202, 79%, 97%, 0.9); /* Transparenter Hintergrund beim Scrollen */
+    /* Weitere Stilregeln für den Hauptbereich... */
+}
+
+.height{
+    height: 400px;
+}
+
+.section {
+    display: flex;
+    top: 55% ;
+    font-size: 1em;
+    font-weight: 530;
+    width: 100%;
+}
+
+.beginning{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#text{
+    z-index: 100;
+}
+
+
+.txtconcept{
+    color: green;
+
+}
