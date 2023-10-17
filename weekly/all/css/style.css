@@ -3,19 +3,21 @@ body {
     background-color: white; /* Hintergrundfarbe des Body */
     font-size:100%;
     text-align: justify;
+    margin: 0;
+    padding: 0;
 }
 
 /* Überschrift */
 .headerandnav {
     background-color: rgb(156, 248, 248); /* Dunkler Hintergrund */
     position: sticky;
-    top: 0;
+    top:0;
     z-index: 100;
     display: grid;
     grid-template-rows:1fr 1fr 1fr 1fr 1fr ;
     
     justify-items: center;
-    align-items:center;
+    
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
     height: 7em;
@@ -35,12 +37,13 @@ body {
 
 .header {
     text-transform: uppercase;
-    margin-bottom: 10px ; /* Abstand unter der Überschrift */  
-    position:relative;
+    margin-bottom: 1px ; /* Abstand unter der Überschrift */  
+    position: relative;
+
     width: 100%;
     align-items:stretch;
     display: flex;
-    
+    align-items: center;
    
 
     font-size: 200%; /* Größe der Überschrift */
@@ -48,7 +51,7 @@ body {
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
-    padding-top: 0.5em; /* Innenabstand der Überschrift */
+    
 }
 
 #navigation {
