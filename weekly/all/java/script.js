@@ -35,7 +35,7 @@ function scrollToSubtitle(subtitleId) {
         const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
             top: screenTop - headerHeight,
-            behavior: 'smooth'
+            behavior: 'auto'
         });
     }
 }

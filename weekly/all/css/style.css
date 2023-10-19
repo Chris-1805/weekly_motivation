@@ -5,6 +5,8 @@ body {
     text-align: justify;
     margin: 0;
     padding: 0;
+    display: grid;
+    
 }
 
 /* Überschrift */
@@ -29,9 +31,6 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-.headerandnav:scrolled{
-    background-color: rgb(240, 240, 251);
-}
 
 
 
@@ -85,11 +84,12 @@ body {
 
 /* Hinzufügen eines Overlay-Farbeffekts beim Schweben über den Header */
 .headerandnav:hover {
-    background-color: rgba(214, 250, 83, 0.418); /* Halbtransparente dunkle Farbe */
+    background-color: rgba(214, 250, 83, 1); /* Halbtransparente dunkle Farbe */
 }
 
 .maingrid{
     display: grid;
+
 }
 .untertitel{
     font-size: 2em;
@@ -114,12 +114,14 @@ body {
 }
 
 .section {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 20fr 1fr;
     top: 55% ;
     font-size: 1em;
     font-weight: 530;
     width: 100%;
 }
+
 
 .beginning{
     display: flex;
