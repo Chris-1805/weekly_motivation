@@ -34,7 +34,24 @@ function scrollToSubtitle(subtitleId) {
         const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
             top: screenTop - headerHeight,
-            behavior: 'smooth'
+            behavior: 'auto'
         });
     }
 }
+
+
+// Function to load and display content from a text file
+function loadTextFileContent(textFilePath, targetElementId) {
+    fetch(textFilePath)
+        .then(response => response.text())
+        .then(content => {
+            document.getElementById(targetElementId).innerHTML = content;
+        })
+        .catch(error => {
+            console.error("Error loading content: " + error);
+        });
+}
+
+// Call the function to load content from the text file and display it
+loadTextFileContent("weekly\all\text\Conzept.txt", "conzept-content");
+
