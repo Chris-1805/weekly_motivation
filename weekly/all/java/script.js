@@ -1,5 +1,22 @@
 // Erhalte das Header-Element mit der Klasse "headerandnav"
 var header = document.querySelector(".headerandnav");
+// Erhalte das Header-Element mit der ID "headerandnav" statt der Klasse "headerandnav"
+var header = document.getElementById("headerandnav");
+
+
+
+function scrollToSubtitle(subtitleId) {
+    const headerHeight = header.offsetHeight; // Use header variable
+    const subtitleElement = document.querySelector(subtitleId); // Correct typo
+    
+    if (subtitleElement) {
+        const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: subtitlePosition - headerHeight, // Use the correct variables
+            behavior: 'auto'
+        });
+    }
+}
 
 // Erhalte alle Sektionen mit der Klasse "untertitel"
 var subtitle = document.querySelectorAll(".untertitel");
@@ -26,18 +43,7 @@ window.addEventListener("scroll", function() {
 });
 
 
-function scrollToSubtitle(subtitleId) {
-    const headerHeight = document.getElementById("headerandnav").offsetHeight;
-    const subtitleElement = document.getElementByClass("untertitel");
 
-    if (subtitleElement) {
-        const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-            top: screenTop - headerHeight,
-            behavior: 'auto'
-        });
-    }
-}
 
 
 // Function to load and display content from a text file

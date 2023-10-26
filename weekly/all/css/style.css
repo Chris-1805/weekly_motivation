@@ -2,31 +2,40 @@ body {
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
     font-size:100%;
-    text-align: justify;
-    margin: 0;
-    padding: 0;
-}
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "header header header header header header"             "Concept Concept Concept Concept Concept Concept"
+        "Main Main Main Main Main Main"
+        "Footer Footer Footer Footer Footer Footer";
+        grid-template-rows:  5% 80% 10%;
+        grid-template-columns: repeat(6, 1fr);
+       
+    }
+    
 head{
      
-    display: grid;
+    
     
 
 }
 
 /* Überschrift */
 .headerandnav {
+    grid-area: header;
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
     z-index: 100;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
+    grid-column: 0/ -1;
+    grid-row: 0/1;
+    width: 100%;
+    height: 100%;
+
+    
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
-    height: 7em;
-    width: 100%;
+   
     background-image: url('fitness-background.jpg'); /* Hintergrundbild für den Header */
     background-size: cover; /* Hintergrundbild an den Header anpassen */
     color: rgba(14, 13, 13, 0.655); /* Weiße Schriftfarbe */
@@ -36,22 +45,16 @@ head{
 
 .headerandnav:scrolled{
     background-color: rgb(240, 240, 251);
-    position: relative;
+   
     color:rgb(201, 36, 36)
 }
 
 
 .header {
-    text-transform: uppercase;
-    margin-bottom: 1px ; /* Abstand unter der Überschrift */  
-    position: relative;
-    width: 100%;
-    display: inline-flex;
-    justify-content: end;    
-    grid-column: 1/7; 
-    grid-row: 1;   
-    justify-self: stretch;
+    text-align: center; /* Zentrieren der Überschrift */
 
+    text-transform: uppercase;
+   
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
@@ -60,29 +63,28 @@ head{
 
 }
 .navigation {
-    position: relative;
-    grid-column:1/7;
-    grid-row: 2;
+   
+    
 }
 #navigation {
     list-style: none; /* Entfernt Listenpunkte-Stile */
-    margin-bottom: 1em;
+   
 }
 
 .navi a{
     color: #000;
     text-decoration: underline solid 0.02em;
-    margin: 0.7em;
+    
     font-weight: bold;
     letter-spacing: 0.1em;
     cursor: pointer;
+    
     transition: color 0.3s ease-in-out; /* Übergangseffekt für Textfarbe */
 }
 
 .navi{
-    position: relative;
-    margin: 0 auto;
-    padding-top: 0.5em;
+    display: inline;
+    padding: 0.005em
    
     
 }
@@ -97,20 +99,18 @@ head{
 }
 
 .maingrid{
-    display: grid;
-
+    grid-area: Main;
 }
 .untertitel{
+    
+    text-align: center;
     font-size: 2em;
-    text-align:center;
    
     color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
-    position:relative;
     top: 52%;
     transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
     /* Weitere Stilregeln für deinen Header und die Navigation... */
     border: 1px dotted black;
-    width: 100%;
 }
 
 .untertitel.transparent {
@@ -123,20 +123,13 @@ head{
 }
 
 .section {
-    display: grid;
-    grid-template-rows: 1fr 20fr 1fr;
     top: 55% ;
     font-size: 1em;
     font-weight: 530;
-    width: 100%;
 }
 
 
 .beginning{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
 }
 
 #text{
