@@ -5,19 +5,19 @@ body {
     text-align: justify;
     margin: 0;
     padding: 0;
+     
 }
 
 /* Überschrift */
 .headerandnav {
-    background-color: rgb(156, 248, 248); /* Dunkler Hintergrund */
+    background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
     z-index: 100;
     display: grid;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr ;
-    
-    justify-items: center;
-    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
     height: 7em;
@@ -31,36 +31,37 @@ body {
 
 .headerandnav:scrolled{
     background-color: rgb(240, 240, 251);
+    position: relative;
+    color:rgb(201, 36, 36)
 }
-
 
 
 .header {
     text-transform: uppercase;
     margin-bottom: 1px ; /* Abstand unter der Überschrift */  
     position: relative;
-
     width: 100%;
-    align-items:stretch;
-    display: flex;
-    align-items: center;
-   
+    display: inline-flex;
+    justify-content: end;    
+    grid-column: 1/7; 
+    grid-row: 1;   
+    justify-self: stretch;
 
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
-    
-}
 
+}
+.navigation {
+    position: relative;
+    grid-column:1/7;
+    grid-row: 2;
+}
 #navigation {
     list-style: none; /* Entfernt Listenpunkte-Stile */
     margin-bottom: 1em;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    
-    
 }
 
 .navi a{
@@ -76,7 +77,9 @@ body {
 .navi{
     position: relative;
     margin: 0 auto;
-    padding-top: 0.5em 
+    padding-top: 0.5em;
+   
+    
 }
 
 .navi a:hover {

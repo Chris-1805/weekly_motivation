@@ -7,12 +7,11 @@ var subtitle = document.querySelectorAll(".untertitel");
 // Füge ein Scroll-Ereignis hinzu
 window.addEventListener("scroll", function() {
     // Überprüfe, ob der Header gescrollt ist und füge die Klasse "scrolled" hinzu
-    if (window.scrollY > 0) {
+      if (header !== null && window.scrollY > 0) {
         header.classList.add("scrolled");
-    } else {
+      } else if (header !== null) {
         header.classList.remove("scrolled");
-    }
-
+      }
     // Überprüfe jede Sektion
     subtitle.forEach(function(subtitle) {
         // Überprüfe, ob die untere Kante des Header-Bereichs den oberen Rand der Sektion berührt
