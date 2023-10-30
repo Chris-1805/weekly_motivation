@@ -24,7 +24,6 @@ head{
 .headerandnav {
     grid-area: header;
     display: flex;
-    justify-content: center;
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
@@ -51,11 +50,12 @@ head{
 
 
 .header {
-    grid-area: header;  
     text-align: center; /* Zentrieren der Überschrift */
+    grid-columns: 1/-1;
 
-    text-transform: uppercase;
-    display: inline-flex;
+    display: inline-flexbox;
+    justify-self: center;    
+    justify-content: center;
    
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
@@ -66,10 +66,9 @@ head{
 
 }
 .navigation {
-    grid-area: header;
     padding: 0.005em;
     justify-content: center;
-    display: inline;
+    display: inline-flex;
     grid-row-start: 3;
 }
 #navigation {
