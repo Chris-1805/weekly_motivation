@@ -23,12 +23,12 @@ head{
 /* Überschrift */
 .headerandnav {
     grid-area: header;
+    display: flex;
+    justify-content: center;
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
     z-index: 100;
-    grid-column: 0/ -1;
-    grid-row: 0/1;
     width: 100%;
     height: 100%;
 
@@ -51,20 +51,26 @@ head{
 
 
 .header {
+    grid-area: header;  
     text-align: center; /* Zentrieren der Überschrift */
 
     text-transform: uppercase;
+    display: inline-flex;
    
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
+    grid-row: 1/2;
 
 }
 .navigation {
-   
-    
+    grid-area: header;
+    padding: 0.005em;
+    justify-content: center;
+    display: inline;
+    grid-row-start: 3;
 }
 #navigation {
     list-style: none; /* Entfernt Listenpunkte-Stile */
@@ -83,9 +89,9 @@ head{
 }
 
 .navi{
-    display: inline;
-    padding: 0.005em
-   
+
+
+
     
 }
 
@@ -102,7 +108,13 @@ head{
     grid-area: Main;
 }
 .untertitel{
+    display: flex;
     
+    grid-area: Main;
+    justify-content: center;
+    justify-self: center;
+    grid-area: main; 
+    grid-column: 4/5;
     text-align: center;
     font-size: 2em;
    
