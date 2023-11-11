@@ -9,24 +9,20 @@ body {
     }
     
 head{
-     
+    position: sticky;
+    top: 0;
+    z-index: 100%
     
-    
+
 
 }
 
 /* Überschrift */
 .headerandnav {
-    
-    display: grid;
-    grid-template-areas: "header "
-                        "navigation";
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
     z-index: 100;
-    width: 100%;
-    height: 100%;
 
     
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
@@ -47,48 +43,42 @@ head{
 
 
 .header {
-    grid-area: header;
-    text-align: center; /* Zentrieren der Überschrift */
+    display: flex;
+    justify-content: center;
     display: inline-flexbox;
-    justify-self: center;    
    
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
-    grid-row: 1/2;
 
 }
-.navigation {
-    grid-area: navigation;
-    padding: 0.005em;
-    text-justify: center;
-    display: inline;
-}
-#navigation {
-    list-style: none; /* Entfernt Listenpunkte-Stile */
-   
-}
+/*Div Navi:*/
+.navigation{
+    /*positioning etc */
+    display: flex;
+    width: 100%;
+    justify-content: center;
 
-.navi a{
-    color: #000;
-    text-decoration: underline solid 0.02em;
+
+    /*Font*/
+
+    list-style: none;
+    text-align: center;
+    letter-spacing: 0.09em;
     
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    
-    transition: color 0.3s ease-in-out; /* Übergangseffekt für Textfarbe */
 }
 
+/*Liste:*/
 .navi{
-
-
-
-    
+    list-style: none;
+    display: inline-flex;
+    color:rgba(0, 0, 0, 0.2);
+    justify-self: stretch;
+    text-align: justify;
+    text-justify: distribute;
 }
-
 .navi a:hover {
     color: rgb(225, 12, 12); /*Farbänderung bei Hover (Mauszeiger darüber) */
 }
@@ -98,22 +88,17 @@ head{
     background-color: rgba(214, 250, 83, 1); /* Halbtransparente dunkle Farbe */
 }
 
-.maingrid{
-    grid-area: Main;
-}
 .untertitel{
     display: flex;
     
-    grid-area: Main;
+   
     justify-content: center;
     justify-self: center;
-    grid-area: main; 
-    grid-column: 4/5;
+  
     text-align: center;
     font-size: 2em;
    
     color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
-    top: 52%;
     transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
     /* Weitere Stilregeln für deinen Header und die Navigation... */
     border: 1px dotted black;
