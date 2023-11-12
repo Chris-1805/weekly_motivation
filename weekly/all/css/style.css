@@ -1,38 +1,30 @@
+html {
+    font-size: 18px;
+}
 body {
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
-    font-size:100%;
-    width: 100%;
-    display: grid;
+    
     
        
     }
-    
-head{
-    position: sticky;
-    top: 0;
-    z-index: 100%
-    
-
-
-}
-
 /* Überschrift */
 .headerandnav {
+    justify-items: center;
+    display: grid;
+    grid-template-rows: auto auto;
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
-    position: sticky;
+    position: relative;
+    margin: 0 auto;
     top:0;
     z-index: 100;
 
     
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
-   
-    background-image: url('fitness-background.jpg'); /* Hintergrundbild für den Header */
-    background-size: cover; /* Hintergrundbild an den Header anpassen */
-    color: rgba(14, 13, 13, 0.655); /* Weiße Schriftfarbe */
+    color: rgba(14, 14, 13, 0.934); /* Weiße Schriftfarbe */
     border-bottom-left-radius: 30px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 450ms ease-in 450ms;
 }
 
 .headerandnav:scrolled{
@@ -43,41 +35,38 @@ head{
 
 
 .header {
-    display: flex;
-    justify-content: center;
-    display: inline-flexbox;
-   
-    font-size: 200%; /* Größe der Überschrift */
+    grid-row: 1/2;
+    display:flexbox;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 100;
+    padding: 5%;
+    font-size: 6rem; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
 
 }
-/*Div Navi:*/
-.navigation{
-    /*positioning etc */
-    display: flex;
-    width: 100%;
-    justify-content: center;
 
-
-    /*Font*/
-
-    list-style: none;
-    text-align: center;
-    letter-spacing: 0.09em;
-    
-}
 
 /*Liste:*/
-.navi{
-    list-style: none;
+.headerandnav .navi{
+    list-style: none;   
     display: inline-flex;
+    max-width: 100%;
+    justify-content: space-between;
+    margin: 3%;
+    
     color:rgba(0, 0, 0, 0.2);
-    justify-self: stretch;
-    text-align: justify;
-    text-justify: distribute;
+       
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.navi a{
+    border: black 1px solid;    
 }
 .navi a:hover {
     color: rgb(225, 12, 12); /*Farbänderung bei Hover (Mauszeiger darüber) */
