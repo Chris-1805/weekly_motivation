@@ -91,51 +91,60 @@ body {
     display: grid;
 
 }
-.untertitel{
-    font-size: 2em;
-    text-align:center;
-   
-    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
-    position:relative;
-    top: 52%;
-    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
-    /* Weitere Stilregeln für deinen Header und die Navigation... */
-    border: 1px dotted black;
-    width: 100%;
-}
+
 
 .untertitel.transparent {
     color: hsl(202, 79%, 97%, 0.9); /* Transparenter Hintergrund beim Scrollen */
     /* Weitere Stilregeln für den Hauptbereich... */
 }
 
-.height{
-    height: 400px;
-}
-
-.section {
-    display: grid;
-    grid-template-rows: 1fr 20fr 1fr;
-    top: 55% ;
-    font-size: 1em;
-    font-weight: 530;
-    width: 100%;
-}
 
 
-.beginning{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 #text{
     z-index: 100;
 }
 
+.lightbulb{
+    display: inline-flex;
+    margin-left: 1em;
+  
+    vertical-align: middle
+}
 
 .txtconcept{
     
 
+}
+.untertitel{
+    height: 50px;
+    text-align: center;
+    text-justify: center;
+}
+h1.untertitel{
+    font-size: 2em;
+    
+   
+    
+    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
+    position:relative;
+    
+    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
+    /* Weitere Stilregeln für deinen Header und die Navigation... */
+   
+    width: 100%;
+
+}
+
+
+p{
+    font-size: 1.5em;
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 0;
+    font-weight: 530;
+    color: black;
+    font-family: 'Kanit', sans-serif ;
 }

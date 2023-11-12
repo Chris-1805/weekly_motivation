@@ -27,18 +27,20 @@ window.addEventListener("scroll", function() {
 });
 
 
+// Funktion zum Scrollen zu einem bestimmten Untertitel
 function scrollToSubtitle(subtitleId) {
-    const headerHeight = document.getElementById("headerandnav").offsetHeight;
-    const subtitleElement = document.getElementByClass("untertitel");
-
+    const subtitleElement = document.querySelector(subtitleId);
     if (subtitleElement) {
-        const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
+        const headerAndNavHeight = document.getElementById('headerandnav').offsetHeight;
+        const offset = headerAndNavHeight + 50; // 50px unter dem Header und der Navigation
+
         window.scrollTo({
-            top: screenTop - headerHeight,
-            behavior: 'auto'
+            top: subtitleElement.offsetTop - offset,
+            behavior: 'smooth'
         });
     }
 }
+
 
 
 // Function to load and display content from a text file
@@ -55,4 +57,7 @@ function loadTextFileContent(textFilePath, targetElementId) {
 
 // Call the function to load content from the text file and display it
 loadTextFileContent("weekly\all\text\Conzept.txt", "conzept-content");
+
+
+
 
