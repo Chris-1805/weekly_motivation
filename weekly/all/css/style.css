@@ -2,28 +2,32 @@ body {
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
     font-size:100%;
-    text-align: justify;
-    margin: 0;
-    padding: 0;
+    width: 100%;
     display: grid;
     
+       
+    }
+    
+head{
+    position: sticky;
+    top: 0;
+    z-index: 100%
+    
+
+
 }
 
 /* Überschrift */
 .headerandnav {
-    background-color: rgb(156, 248, 248); /* Dunkler Hintergrund */
+    background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
     top:0;
     z-index: 100;
-    display: grid;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr ;
-    
-    justify-items: center;
+
     
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
-    height: 7em;
-    width: 100%;
+   
     background-image: url('fitness-background.jpg'); /* Hintergrundbild für den Header */
     background-size: cover; /* Hintergrundbild an den Header anpassen */
     color: rgba(14, 13, 13, 0.655); /* Weiße Schriftfarbe */
@@ -31,53 +35,50 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-
+.headerandnav:scrolled{
+    background-color: rgb(240, 240, 251);
+   
+    color:rgb(201, 36, 36)
+}
 
 
 .header {
-    text-transform: uppercase;
-    margin-bottom: 1px ; /* Abstand unter der Überschrift */  
-    position: relative;
-
-    width: 100%;
-    align-items:stretch;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    display: inline-flexbox;
    
-
     font-size: 200%; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
     text-transform: uppercase; /* Uppercase (Großbuchstaben) für die Überschrift */
+
+}
+/*Div Navi:*/
+.navigation{
+    /*positioning etc */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+
+    /*Font*/
+
+    list-style: none;
+    text-align: center;
+    letter-spacing: 0.09em;
     
 }
 
-#navigation {
-    list-style: none; /* Entfernt Listenpunkte-Stile */
-    margin-bottom: 1em;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    
-    
-}
-
-.navi a{
-    color: #000;
-    text-decoration: underline solid 0.02em;
-    margin: 0.7em;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out; /* Übergangseffekt für Textfarbe */
-}
-
+/*Liste:*/
 .navi{
-    position: relative;
-    margin: 0 auto;
-    padding-top: 0.5em 
+    list-style: none;
+    display: inline-flex;
+    color:rgba(0, 0, 0, 0.2);
+    justify-self: stretch;
+    text-align: justify;
+    text-justify: distribute;
 }
-
 .navi a:hover {
     color: rgb(225, 12, 12); /*Farbänderung bei Hover (Mauszeiger darüber) */
 }
@@ -87,20 +88,40 @@ body {
     background-color: rgba(214, 250, 83, 1); /* Halbtransparente dunkle Farbe */
 }
 
-.maingrid{
-    display: grid;
-
+.untertitel{
+    display: flex;
+    
+   
+    justify-content: center;
+    justify-self: center;
+  
+    text-align: center;
+    font-size: 2em;
+   
+    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
+    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
+    /* Weitere Stilregeln für deinen Header und die Navigation... */
+    border: 1px dotted black;
 }
-
 
 .untertitel.transparent {
     color: hsl(202, 79%, 97%, 0.9); /* Transparenter Hintergrund beim Scrollen */
     /* Weitere Stilregeln für den Hauptbereich... */
 }
 
+.height{
+    height: 400px;
+}
+
+.section {
+    top: 55% ;
+    font-size: 1em;
+    font-weight: 530;
+}
 
 
-
+.beginning{
+}
 
 #text{
     z-index: 100;
@@ -114,7 +135,7 @@ body {
 }
 
 .txtconcept{
-    
+    color: blue;
 
 }
 .untertitel{

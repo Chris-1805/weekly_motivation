@@ -1,5 +1,22 @@
 // Erhalte das Header-Element mit der Klasse "headerandnav"
 var header = document.querySelector(".headerandnav");
+// Erhalte das Header-Element mit der ID "headerandnav" statt der Klasse "headerandnav"
+var header = document.getElementById("headerandnav");
+
+
+
+function scrollToSubtitle(subtitleId) {
+    const headerHeight = header.offsetHeight; // Use header variable
+    const subtitleElement = document.querySelector(subtitleId); // Correct typo
+    
+    if (subtitleElement) {
+        const subtitlePosition = subtitleElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: subtitlePosition - headerHeight, // Use the correct variables
+            behavior: 'auto'
+        });
+    }
+}
 
 // Erhalte alle Sektionen mit der Klasse "untertitel"
 var subtitle = document.querySelectorAll(".untertitel");
@@ -7,12 +24,11 @@ var subtitle = document.querySelectorAll(".untertitel");
 // Füge ein Scroll-Ereignis hinzu
 window.addEventListener("scroll", function() {
     // Überprüfe, ob der Header gescrollt ist und füge die Klasse "scrolled" hinzu
-    if (window.scrollY > 0) {
+      if (header !== null && window.scrollY > 0) {
         header.classList.add("scrolled");
-    } else {
+      } else if (header !== null) {
         header.classList.remove("scrolled");
-    }
-
+      }
     // Überprüfe jede Sektion
     subtitle.forEach(function(subtitle) {
         // Überprüfe, ob die untere Kante des Header-Bereichs den oberen Rand der Sektion berührt
@@ -27,19 +43,6 @@ window.addEventListener("scroll", function() {
 });
 
 
-// Funktion zum Scrollen zu einem bestimmten Untertitel
-function scrollToSubtitle(subtitleId) {
-    const subtitleElement = document.querySelector(subtitleId);
-    if (subtitleElement) {
-        const headerAndNavHeight = document.getElementById('headerandnav').offsetHeight;
-        const offset = headerAndNavHeight + 50; // 50px unter dem Header und der Navigation
-
-        window.scrollTo({
-            top: subtitleElement.offsetTop - offset,
-            behavior: 'smooth'
-        });
-    }
-}
 
 
 
