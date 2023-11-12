@@ -1,5 +1,5 @@
 html {
-    font-size: 18px;
+
 }
 body {
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
@@ -13,9 +13,10 @@ body {
     justify-items: center;
     display: grid;
     grid-template-rows: auto auto;
+
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
-    position: relative;
-    margin: 0 auto;
+    position: sticky;
+    
     top:0;
     z-index: 100;
 
@@ -24,9 +25,13 @@ body {
     
     color: rgba(14, 14, 13, 0.934); /* Weiße Schriftfarbe */
     border-bottom-left-radius: 30px;
-    transition: background-color 450ms ease-in 450ms;
+    transition: background-color 450ms ease-in;
 }
 
+/* Hinzufügen eines Overlay-Farbeffekts beim Schweben über den Header */
+.headerandnav:hover {
+    /*background-color: rgb(119, 83, 250); Halbtransparente dunkle Farbe */
+}
 .headerandnav:scrolled{
     background-color: rgb(240, 240, 251);
    
@@ -41,8 +46,8 @@ body {
     text-align: center;
     margin: 0 auto;
     width: 100;
-    padding: 5%;
-    font-size: 6rem; /* Größe der Überschrift */
+    padding-top: 1%;
+    font-size: 5rem; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
@@ -50,6 +55,11 @@ body {
 
 }
 
+.navigation{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 /*Liste:*/
 .headerandnav .navi{
@@ -57,40 +67,66 @@ body {
     display: inline-flex;
     max-width: 100%;
     justify-content: space-between;
-    margin: 3%;
+    margin: 1% 3%;
     
     color:rgba(0, 0, 0, 0.2);
        
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 0.2rem;
 }
 
 .navi a{
-    border: black 1px solid;    
+    border-radius:10%;
+    padding: 1%;
 }
 .navi a:hover {
-    color: rgb(225, 12, 12); /*Farbänderung bei Hover (Mauszeiger darüber) */
+    background-color: rgb(252, 242, 242); /*Farbänderung bei Hover (Mauszeiger darüber) */
+    transition: all 2 stepstart;
 }
 
-/* Hinzufügen eines Overlay-Farbeffekts beim Schweben über den Header */
-.headerandnav:hover {
-    background-color: rgba(214, 250, 83, 1); /* Halbtransparente dunkle Farbe */
-}
 
+
+/*Untertitel*/
 .untertitel{
-    display: flex;
-    
-   
-    justify-content: center;
-    justify-self: center;
-  
+    height: 50px;
     text-align: center;
-    font-size: 2em;
-   
-    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
-    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
-    /* Weitere Stilregeln für deinen Header und die Navigation... */
-    border: 1px dotted black;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.2em;
+    padding-top: 0.2em;
+    transition: all 450ms ease-in;
+}
+
+
+.untertitel h2{
+    align-self:center
+
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2)   rotate(180deg);
+    }   
+    100% {
+        transform: scale(1.4 ) rotate(360deg);
+    }
+    
+}   
+.Subtimg {
+    display: inline-flex;
+    margin-left: 0.5em;
+    vertical-align:text-bottom;
+}
+
+
+
+
+.Subtimg:hover {
+    animation: scaleUp 1s ease-in-out forwards;
+    border-radius: 10%;
 }
 
 .untertitel.transparent {
@@ -108,42 +144,25 @@ body {
     font-weight: 530;
 }
 
-
-.beginning{
+/*Content*/
+.section p{
+    font-size: 1.5em;
+    text-align: center;
+    
+    max-width: 52%;
+    padding-bottom: 4%;
+    font-weight: 530;
+    color: black;
+    font-family: 'Kanit', sans-serif ;
+    line-height: 1.5;
 }
-
 #text{
     z-index: 100;
 }
 
-.lightbulb{
-    display: inline-flex;
-    margin-left: 1em;
-  
-    vertical-align: middle
-}
 
 .txtconcept{
     color: blue;
-
-}
-.untertitel{
-    height: 50px;
-    text-align: center;
-    text-justify: center;
-}
-h1.untertitel{
-    font-size: 2em;
-    
-   
-    
-    color: hsla(0, 0%, 0%, ); /* Transparenter Hintergrund */
-    position:relative;
-    
-    transition: color  500ms ease-in-out; /* Übergangseffekt für Hintergrundfarbe */
-    /* Weitere Stilregeln für deinen Header und die Navigation... */
-   
-    width: 100%;
 
 }
 
