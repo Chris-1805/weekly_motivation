@@ -62,5 +62,12 @@ function loadTextFileContent(textFilePath, targetElementId) {
 loadTextFileContent("weekly\all\text\Conzept.txt", "conzept-content");
 
 
+// Calculator
+var slider = document.getElementById("weight");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
 
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 

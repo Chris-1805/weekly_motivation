@@ -166,7 +166,72 @@ body {
 
 }
 
+/*Calculator*/
+input[type=range] {
+    /* Breite des Sliders */
+    width: 30%;
+    /* Höhe des Sliders */
+    height: 25px;
+    /* Hintergrundfarbe des Sliders */
+    background: #c1dff1;
+    /* Entfernt den Standard-Outline um den Slider */
+    outline: none;
+    
+     background-image: linear-gradient(#ff4500, #ff4500);
+     background-size: 70% 100%;
+     background-repeat: no-repeat;
+    /* Fügt einen Übergangseffekt hinzu, wenn der Slider bewegt wird */
+    transition: .2s;
+}
 
+input[type=range]::-webkit-slider-thumb {
+    /* Webkit-Browser wie Chrome, Safari */
+    /* Größe des Schiebereglers */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    /* Hintergrundfarbe des Schiebereglers */
+    background: #4c96af;
+    /* Runde Ecken für den Schieberegler */
+    border-radius: 50%;
+    /* Cursor beim Überfahren des Schiebereglers */
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    /* Firefox */
+    width: 25px;
+    height: 25px;
+    background: #4c89af;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider {
+    width: 100%;
+  }
+  
+  .slider, .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    border-radius: 5px;  
+    background: rgb(211, 211, 211);
+    outline: none;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    width: 25px;
+    background: #4ca8af;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    background: #4c93af;
+    cursor: pointer;
+  }
 p{
     font-size: 1.5em;
     text-align: justify;
