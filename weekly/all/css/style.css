@@ -67,9 +67,10 @@ body {
 /*Liste:*/
 .headerandnav .navi{
     list-style: none;   
-    justify-content: center;
-    display: flex;
+    justify-content: space-evenly;
+    display: inline-flex;
     flex-direction: row;
+
     
     
     color:rgba(0, 0, 0, 0.2);
@@ -79,7 +80,7 @@ body {
 }
 
 .navi a{
-    
+    margin: 3rem 3rem;
 }
 .navi a:hover {
     background-color: rgb(252, 242, 242); /*Farbänderung bei Hover (Mauszeiger darüber) */
