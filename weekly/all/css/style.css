@@ -2,24 +2,29 @@ html {
 
 }
 body {
+    display: fixed;
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
-    
+    width: 100vw;
     
        
+main{
+    display: flex;
+    grid-template-areas: left mid right;
+    grid-template-columns: 1fr 52% 1fr;
+
+}
     }
 /* Überschrift */
 .headerandnav {
-    justify-items: center;
-    display: grid;
-    grid-template-rows: auto auto;
-
+    display: inline-flexbox;
+    
+    justify-content: center;
     background-color: rgb(149, 240, 240); /* Dunkler Hintergrund */
     position: sticky;
-    
     top:0;
     z-index: 100;
-
+    
     
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Schatten für den Header */
     
@@ -40,14 +45,14 @@ body {
 
 
 .header {
-    grid-row: 1/2;
-    display:flexbox;
+    display: flex;
     position: relative;
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    width: 100;
-    padding-top: 1%;
-    font-size: 5rem; /* Größe der Überschrift */
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    font-size: 3rem; /* Größe der Überschrift */
     font-family: 'Berlin sans FB'; /* Schriftart der Überschrift */
     letter-spacing: 0.2em; /* Buchstabenspacing der Überschrift */
     text-decoration: underline ; /* Dekoration der Überschrift */
@@ -67,20 +72,19 @@ body {
 /*Liste:*/
 .headerandnav .navi{
     list-style: none;   
-    justify-content: space-evenly;
     display: inline-flex;
     flex-direction: row;
-
     
     
     color:rgba(0, 0, 0, 0.2);
        
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2rem;
 }
 
 .navi a{
-    margin: 3rem 3rem;
+    
+    margin: 1.4rem 2rem;
 }
 .navi a:hover {
     background-color: rgb(252, 242, 242); /*Farbänderung bei Hover (Mauszeiger darüber) */
@@ -91,6 +95,7 @@ body {
 
 /*Untertitel*/
 .untertitel{
+    
     height: 50px;
     text-align: center;
     align-items: center;
@@ -137,9 +142,7 @@ body {
     /* Weitere Stilregeln für den Hauptbereich... */
 }
 
-.height{
-    height: 400px;
-}
+
 
 .section {
     top: 55% ;
@@ -185,72 +188,133 @@ body {
     line-height: 1.5;
 }
 
-.Calculatorlist p
+.Calculatorlist p{
+}
+/*Calculator BMI*/
+.CalcBMI{
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    text-align: center;
+    width: 52%;
+    font-weight: bold;
+    padding: 2%;
+    border: dashed rgb(89, 176, 167);
+    margin:  auto;
+}
+
+#BMIButton{
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    border:solid rgb(89, 176, 167);
+    min-height: 5rem ;
+    border-radius: 40%;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(149, 240, 240);
+    font-size: 1.5rem;
+    top: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+#BMIButton:hover{
+    background-color: rgb(89, 176, 167);
+    color: white;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0.5rem 1rem #458093;
 }
 input[type=range] {
-    /* Breite des Sliders */
-    width: 30%;
-    /* Höhe des Sliders */
-    height: 25px;
-    /* Hintergrundfarbe des Sliders */
-    background: #c1dff1;
-    /* Entfernt den Standard-Outline um den Slider */
+    width: 50%;
+    height: 6rem;
+    padding: 0;
     outline: none;
-    
-     background-image: linear-gradient(#ff4500, #ff4500);
-     background-size: 70% 100%;
-     background-repeat: no-repeat;
-    /* Fügt einen Übergangseffekt hinzu, wenn der Slider bewegt wird */
+    cursor: pointer;
+    background: radial-gradient(#4c96af, #ff4500);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
     transition: .2s;
 }
 
-input[type=range]::-webkit-slider-thumb {
-    /* Webkit-Browser wie Chrome, Safari */
-    /* Größe des Schiebereglers */
+input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    /* Hintergrundfarbe des Schiebereglers */
-    background: #4c96af;
-    /* Runde Ecken für den Schieberegler */
-    border-radius: 50%;
-    /* Cursor beim Überfahren des Schiebereglers */
-    cursor: pointer;
-}
-
-input[type=range]::-moz-range-thumb {
-    /* Firefox */
-    width: 25px;
-    height: 25px;
-    background: #4c89af;
+    height: 3rem;
+    width: 3rem;
+    background: #47bde8;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.slider {
+input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-track {
     width: 100%;
-  }
-  
-  .slider, .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 15px;
-    border-radius: 5px;  
-    background: rgb(211, 211, 211);
-    outline: none;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    width: 25px;
-    background: #4ca8af;
+    height: 2rem;
     cursor: pointer;
-  }
+    background: #50b1ed;
+    border-radius: 3%;
+}
+.CalcBMI .weight,
+.CalcBMI .height{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#height, 
+#weight{
+    display: flex;
+    justify-content: center;
+    position: relative;
+   
+}
+
+.calculator{
+    display: flex;
+    justify-content: center;
+}
   
-  .slider::-moz-range-thumb {
-    width: 25px;
-    background: #4c93af;
-    cursor: pointer;
+
+
+  #valueweight{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+.weight{
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+#valueheight{
+    position: absolute;
+    left: 50%;
+    margin-bottom: 3%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 6%;
+}
+table {
+    font-family: 'Kanit', sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+
+  }
+
+  th, td {
+    border: 2px solid #bab6b6;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
   }
 p{
     font-size: 1.5em;

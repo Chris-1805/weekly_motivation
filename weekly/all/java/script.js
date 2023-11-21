@@ -46,28 +46,30 @@ window.addEventListener("scroll", function() {
 
 
 
-// Function to load and display content from a text file
-function loadTextFileContent(textFilePath, targetElementId) {
-    fetch(textFilePath)
-        .then(response => response.text())
-        .then(content => {
-            document.getElementById(targetElementId).innerHTML = content;
-        })
-        .catch(error => {
-            console.error("Error loading content: " + error);
-        });
-}
+document.addEventListener('DOMContentLoaded', function () {
+    // Calculator
+    const weightInput = document.getElementById('weight');
+    const heightInput = document.getElementById('height');
+    const valueWeight = document.getElementById('valueweight');
+    const valueHeight = document.getElementById('valueheight');
+    const resultContainer = document.getElementById('result');
+    const calculateButton = document.getElementById('BMIButton'); // Replace 'calculateButton' with the id of your button
 
-// Call the function to load content from the text file and display it
-loadTextFileContent("weekly\all\text\Conzept.txt", "conzept-content");
+    weightInput.addEventListener('input', updateBMI);
+    heightInput.addEventListener('input', updateBMI);
+    calculateButton.addEventListener('click', calculateBMI);
 
+    function updateBMI() {
+        valueWeight.textContent = weightInput.value;
+        valueHeight.textContent = heightInput.value;
+    }
 
-// Calculator
-var slider = document.getElementById("weight");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
+    function calculateBMI() {
+        const weight = parseInt(weightInput.value);
+        const height = parseInt(heightInput.value);
+        // Perform your BMI calculation here
+        const bmi = weight / ((height / 100) * (height / 100));  // Example calculation
+        resultContainer.textContent = + bmi.toFixed(2);
+    }
+});
 

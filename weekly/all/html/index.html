@@ -95,12 +95,99 @@
 
 
         <br><br>
-        <input class="calculator BMI" value="Weight" type="range" id="weight" name="weight" min="40" max="100" step="0.1" > 
-        <br>
-        <label for="weight">Weight in Kg</label>
-        </div>
+        <div class="CalcBMI">
+            <div class="weight">
             
+        <div class="value-display" id="valueweight">95</div>
+
+        <input class="calculator BMI" value="95" type="range" id="weight" name="weight" min="30" max="160" step="0.1" > 
+
+        <label for="weight">Weight in Kilogramm</label>
+
+            </div>
+        
+
+        
+            <div class="height">
+
+                <div class="value-display" id="valueheight">175</div>
+
+        <input class="calculator BMI" value="Height" type="range" id="height" name ="height" min="130" max="220" step="0.5">
+      
+                
+
+        <label for ="height">Height in Centimeters</label>
+
+            </div>
+
+        <button id="BMIButton" onclick="calculateBMI()">Calculate BMI</button>
+        <div id="result">Your BMI equals: </div>
+
         </div>
+           <p>So now that you have calculated your BMI lets move on to some facts:
+            The body mass index is categorized into different ranges, being <strong>Underweight</strong>, <strong>Normal Weight</strong>, <strong>Overweight</strong> and <strong>Obese</strong>. In general, the same values go for women and for men, however often times the categories are slightly lower for women because naturally they have a higher body-fat percentage. </p>
+            
+            <h2>BMI Categories</h2>
+
+           
+            <table>
+                <tr>
+                  <th>BMI Range</th>
+                  <th>Category</th>
+                  
+                </tr>
+                <tr>
+                  <td>&lt; 18.5</td>
+                  <td>Underweight</td>
+                  
+                </tr>
+                <tr>
+                  <td>18.5 - 24.9</td>
+                  <td>Normal Weight</td>
+                  
+                </tr>
+                <tr>
+                  <td>25 - 29.9</td>
+                  <td>Overweight</td>
+                  
+                </tr>
+                <tr>
+                  <td>&ge; 30</td>
+                  <td>Obese</td>
+                  
+                </tr>
+              </table>
+            
+              <p>As it was mentioned before, the BMI is a usefull screening tool, but it has its limitations because it does not take body fat, muscle mass and overall health into account.
+              So already at this point, we want to clarify that if you have any concerns regarding your BMI, write us or consult a doctor, because elevated/ low BMI is associated to increased risk of various health conditions.
+
+              So whether you want to increase or decrease your BMI, it all comes down to nutrition, exercise and willpower/ motivation. While the BMI can be a motivational tool, it is still crucial to set healthy goals and aim for a healthy and happy lifestyle. 
+
+              Now that you know your BMI and what it tells you and what not, it is important to figure out your personal goals. In the next section we will provide you with a calory intake calculator which will help you reach the goals, that you set.
+                And since we're all about goals right now, one more tip: as soon as you know were your journey should lead you, write it down but do not tell everyone else. This way you can hold yourself accountable but and you will not be distracted by what other people might tell you. So now, lets dive right into reaching some goals.</p>
+        </div>
+        <div class="Calory Intake">
+            <p>As with every other aspect of life, losing or gaining weight does not just happen. Neither is there a magic formula or a shortcut. No matter what strategy you might use, in the end it always comes down to this core principle: 
+                If you want to loose weight, you need to be in a caloric <strong>deficit</strong>, meaning that you need to burn (via exercise) more calories than you consume. 
+                Vice versa, if you are trying to gain weight, you have to be in a caloric <strong>surplus</strong>, so you need to ingest more calories than you burn. 
+                Again, calory needs are very individual and not perfectly assessable but having some kind of idea helps for a start. 
+                First we are going to calculate your approximate calory burning without exercise. Please fill out the following fields:
+                (Disclaimer: We want to ensure a inclusive and welcoming place where everyone feels comfortable. However to provide you with the best results, we need to ask you about you and your body)</p>
+                <div class="CalQuestions">
+                    <input type="number" id="age" name="age" placeholder="Age" min="1" max="100" step="1">
+                </div>
+                <label for="age">Age</label>
+
+
+                <select " id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>   
+        </div>
+
+       
         <!--Meetings-->
         <div class="section meetings" >
             <h1 class="untertitel" id="Meetings">Meetings <img class="Subtimg" id="calculator" src="..\html\Pics\video-call.png" alt="Meeting Icon" class="meetings" height="40px"> </h1>
@@ -121,6 +208,7 @@
             <h1 class="untertitel" id="Contact">Contact <img class="Subtimg" id="contact" src="..\html\Pics\profile.png" alt="Contact Icon" class="contact" height="40px"></h1>
         </div>
         </div>
+        </div name="main">
     </main>
     
 </body>
