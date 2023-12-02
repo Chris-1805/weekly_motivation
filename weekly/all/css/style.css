@@ -1,11 +1,13 @@
 html {
-
+    scroll-behavior: smooth;
 }
 body {
     display: fixed;
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
     width: 100vw;
+    background-image: url(../html/pics/BACKS.png) ; /* Hintergrundbild des Body */
+    background-color: rgba(255, 255, 255, 0.9);
     
        
 main{
@@ -31,18 +33,49 @@ main{
     color: rgba(14, 14, 13, 0.934); /* Weiße Schriftfarbe */
     border-bottom-left-radius: 30px;
     transition: background-color 450ms ease-in;
+
 }
 
 /* Hinzufügen eines Overlay-Farbeffekts beim Schweben über den Header */
-.headerandnav:hover {
-    /*background-color: rgb(119, 83, 250); Halbtransparente dunkle Farbe */
+
+.headerandnav.scrolled{
+    background-color: rgba(149, 240, 240, 0.667); /* Dunkler Hintergrund */
+    height:100vh;
+    width: 10%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top-left-radius: 3%;
+    overflow: auto;
+    z-index: 100;
+    
+    
 }
-.headerandnav:scrolled{
-    background-color: rgb(240, 240, 251);
-   
-    color:rgb(201, 36, 36)
+.headerandnav.scrolled a{
+    color:rgba(201, 36, 36, 0.623);
+    align-items: flex-end;
+    text-justify: justify;
+    margin: 1rem;
+    margin-top:-1rem;
+
+    font-size: 0.75rem;
+}
+.headerandnav.scrolled h1 {
+    display: none;
 }
 
+.totop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 3.5rem;
+    cursor: pointer;
+}
 
 .header {
     display: flex;
@@ -81,6 +114,8 @@ main{
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
 }
+
+
 
 .navi a{
     
@@ -156,7 +191,7 @@ main{
     text-align: center;
     
     max-width: 52%;
-    padding-bottom: 4%;
+    padding-bottom: 4rem;
     font-weight: 530;
     color: black;
     font-family: 'Kanit', sans-serif ;
@@ -188,20 +223,27 @@ main{
     line-height: 1.5;
 }
 
-.Calculatorlist p{
+.Calculatorlist a{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    
+    font-weight: 600;
+    color: black;
+    font-family: 'Kanit', sans-serif ;
+    line-height: 1.5;
 }
 /*Calculator BMI*/
 .CalcBMI{
     grid-column: 1/2;
     display: flex;
+    margin-top: -2%;
     flex-direction: column;
     align-content: start;
-    text-align: center;
     width: 52%;
-    font-weight: bold;
     padding: 2%;
     border: dashed rgb(89, 176, 167);
-    margin:  auto;
+    margin:  2.5rem auto;
 }
 
 #BMIButton{
@@ -222,15 +264,15 @@ main{
     cursor: pointer;
     font-weight: 600;
 }
+
+
 #BMIButton:hover{
     background-color: rgb(89, 176, 167);
     color: white;
     transition: all 0.4s ease-in-out;
     box-shadow: 0 0.5rem 1rem #458093;
 }
-.calculator-BMI{
-    margin: 2rem;
-}
+
 
 .CalcBMI .weight,
 .CalcBMI .height{
@@ -279,6 +321,11 @@ main{
     font-weight: bold;
     margin-bottom: 6%;
 }
+
+#result{
+    text-align: center;
+}
+
 table {
     font-family: 'Kanit', sans-serif;
     border-collapse: collapse;
@@ -296,9 +343,78 @@ table {
   th {
     background-color: #f2f2f2;
   }
+
+.CalcCalory{
+    grid-column: 1/2;
+    display: flex;
+    margin-top: -2%;
+    flex-direction: column;
+    align-content: start;
+    width: 52%;
+    padding: 2%;
+    border: dashed rgb(89, 176, 167);
+    margin:  2.5rem auto;
+}
+.calQuestions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+    padding: 2%;
+    border: dashed rgb(89, 176, 167);
+    margin:  auto;
+    text-align: center;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+  input[type=number], select {
+    display: block;
+    margin: 1rem auto;
+    width: 10rem;
+    height: 3rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+
 p{
     font-size: 1.5em;
     text-align: justify;
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 0;
+    font-weight: 530;
+    color: black;
+    font-family: 'Kanit', sans-serif ;
+}
+
+
+
+h2{
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80%;
+    padding: 2rem;
+    font-weight: 530;
+    color: black;
+    font-family: 'Kanit', sans-serif ;
+}
+
+h3{
+    font-size: 1.5em;
+    text-align: center;
     margin: 0 auto;
     max-width: 80%;
     padding: 0;
@@ -336,4 +452,4 @@ input[type=range]::-webkit-slider-runnable-track, input[type=range]::-moz-range-
     height: 2rem;
     cursor: pointer;
     background: #50b1ed;
-    border-radius: 3%;
+    border-radius: 3%;}
