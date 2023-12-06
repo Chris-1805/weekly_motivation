@@ -73,3 +73,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+
+//Calory Intake
+function calculate() {
+    // Get user inputs
+    var age = parseInt(document.getElementById("age").value);
+    var gender = document.getElementById("gender").value;
+    var weight = parseFloat(document.getElementById("weight").value);
+    var height = parseFloat(document.getElementById("height").value);
+    var activityLevel = parseFloat(document.getElementById("activity").value);
+    var goal = document.getElementById("goal").value;
+
+    // Validate inputs
+    if (isNaN(age) || isNaN(weight) || isNaN(height)) {
+        console.error("Invalid input. Please enter valid numeric values for age, weight, and height.");
+        return;
+    }
+
+    // Calculate BMR based on gender
+    var bmr = (gender === 'male') ?
+        88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age) :
+        447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+
+    // Calculate TDEE based on activity level
+    var tdee = bmr * activityLevel;
+
+    // Adjust calorie intake based on goal
+    var calorieIntake;
+    switch (goal) {
+        case 'weightLoss':
+            calorieIntake = tdee - 500; // Create a calorie deficit
+            break;
+        case 'maintenance':
+            calorieIntake = tdee; // Maintain current weight
+            break;
+        case 'weightGain':
+            calorieIntake = tdee + 500; // Create a calorie surplus
+            break;
+        default:
+            console.error("Invalid goal. Please select a valid goal.");
+            return;
+    }
+
+    // Display the result
+    var resultElement = document.getElementById("result");
+    resultElement.textContent = "Your estimated daily calorie intake is: " + calorieIntake.toFixed(2) + " calories";
+
+    // Show the result container
+    document.getElementById("resultContainer").style.display = "block"; // Change display to "block"
+}
