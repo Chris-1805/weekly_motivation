@@ -46,8 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Calculator
+document.addEventListener('DOMContentLoaded', function ()
+{
+     // Calculator
     const weightInput = document.getElementById('weight');
     const heightInput = document.getElementById('height');
     const valueWeight = document.getElementById('valueweight');
@@ -78,12 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
 //Calory Intake
 function calculate() {
     // Get user inputs
-    var age = parseInt(document.getElementById("age").value);
-    var gender = document.getElementById("gender").value;
-    var weight = parseFloat(document.getElementById("weight").value);
-    var height = parseFloat(document.getElementById("height").value);
-    var activityLevel = parseFloat(document.getElementById("activity").value);
-    var goal = document.getElementById("goal").value;
+    var age = parseInt(document.getElementById('ageC').value);
+    var gender = document.getElementById('genderC').value;
+    var weight = parseFloat(document.getElementById('weightC').value);
+    var height = parseFloat(document.getElementById('heightC').value);
+    var activityLevel = parseFloat(document.getElementById('activityC').value);
+    var goal = document.getElementById('goalC').value;
 
     // Validate inputs
     if (isNaN(age) || isNaN(weight) || isNaN(height)) {
@@ -117,7 +118,7 @@ function calculate() {
     }
 
     // Display the result
-    var resultElement = document.getElementById("result");
+    var resultElement = document.getElementById("resultC");
     resultElement.textContent = "Your estimated daily calorie intake is: " + calorieIntake.toFixed(2) + " calories";
 
     // Show the result container
