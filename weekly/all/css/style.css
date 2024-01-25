@@ -7,7 +7,7 @@ body {
     font-family: 'Kanit', sans-serif ; /* Schriftart für den gesamten Text im Body */
     background-color: white; /* Hintergrundfarbe des Body */
     width: 100vw;
-    background-image: url(../html/pics/BACK.png) ; /* Hintergrundbild des Body */
+    /*background-image: url(../html/pics/back1.png) ;  Hintergrundbild des Body */
     background-color: rgba(255, 255, 255, 0.9);
     
        
@@ -235,7 +235,7 @@ main{
     line-height: 1.5;
 }
 /*Calculator BMI*/
-.CalcBMI{
+.CalcBMI, .CalcCalory{
     grid-column: 1/2;
     display: flex;
     margin-top: -2%;
@@ -247,7 +247,7 @@ main{
     margin:  2.5rem auto;
 }
 
-#BMIButton{
+#BMIButton, #CalButton{
     display: flex;
     position: relative;
     margin: 0 auto;
@@ -267,7 +267,7 @@ main{
 }
 
 
-#BMIButton:hover{
+#BMIButton:hover, #CalButton {
     background-color: rgb(89, 176, 167);
     color: white;
     transition: all 0.4s ease-in-out;
@@ -322,8 +322,9 @@ main{
     margin-bottom: 6%;
 }
 
-#result{
+#resultBMI, #resultC{
     text-align: center;
+
 }
 
 table {
@@ -344,17 +345,6 @@ table {
     background-color: #f2f2f2;
   }
 
-.CalcCalory{
-    grid-column: 1/2;
-    display: flex;
-    margin-top: -2%;
-    flex-direction: column;
-    align-content: start;
-    width: 52%;
-    padding: 2%;
-    border: dashed rgb(89, 176, 167);
-    margin:  2.5rem auto;
-}
 .calQuestions{
     display: flex;
     flex-direction: column;

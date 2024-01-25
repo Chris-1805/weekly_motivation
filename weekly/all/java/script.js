@@ -9,18 +9,8 @@ window.addEventListener('scroll', function() {
     }
 });
 
-window.addEventListener('scroll', function() {
-    var scrollToTopButton = document.getElementById('totop');
-    if (window.pageYOffset > 0) {
-        scrollToTopButton.style.display = 'block';
-    } else {
-        scrollToTopButton.style.display = 'none';
-    }
-});
 
-document.getElementById('scrollToTopButton').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('a[href^="#"]');
@@ -44,37 +34,32 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+function calculateBMI() {
+    console.log("calculateBMI function called");
 
+    const weightInput = document.getElementById('weightBMI');
+    const heightInput = document.getElementById('heightBMI');
+    const resultContainer = document.getElementById('resultBMI');
 
-document.addEventListener('DOMContentLoaded', function ()
-{
-     // Calculator
-    const weightInput = document.getElementById('weight');
-    const heightInput = document.getElementById('height');
-    const valueWeight = document.getElementById('valueweight');
-    const valueHeight = document.getElementById('valueheight');
-    const resultContainer = document.getElementById('result');
-    const calculateButton = document.getElementById('BMIButton'); // Replace 'calculateButton' with the id of your button
+    console.log("Weight:", weightInput.value, "Height:", heightInput.value);
 
-    weightInput.addEventListener('input', updateBMI);
-    heightInput.addEventListener('input', updateBMI);
+    const weight = parseFloat(weightInput.value);
+    const height = parseFloat(heightInput.value);
+
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0 || weightInput.value === '' || heightInput.value === '') {
+        resultContainer.textContent = "Please enter valid weight and height.";
+        return;
+    }
+
+    const bmi = weight / ((height / 100) * (height / 100));
+    resultContainer.textContent = "Your BMI equals: " + bmi.toFixed(2);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const calculateButton = document.getElementById('BMIButton');
     calculateButton.addEventListener('click', calculateBMI);
-
-    function updateBMI() {
-        valueWeight.textContent = weightInput.value;
-        valueHeight.textContent = heightInput.value;
-    }
-
-    function calculateBMI() {
-        const weight = parseInt(weightInput.value);
-        const height = parseInt(heightInput.value);
-        // Perform your BMI calculation here
-        const bmi = weight / ((height / 100) * (height / 100));  // Example calculation
-        resultContainer.textContent = + bmi.toFixed(2);
-    }
+    console.log("Event listener attached to BMI button");
 });
-
-
 
 //Calory Intake
 function calculate() {
